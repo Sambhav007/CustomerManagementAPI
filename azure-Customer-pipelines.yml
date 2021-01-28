@@ -1,0 +1,24 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+stages:
+  - stage: BuildAndPublish
+    displayName: Build and Push Docket to Register then Publish of release pipeline
+    jobs:
+    - job: Build
+      steps:
+      - task: Docker@2
+        displayName: Build and push an image to container registry
+        inputs:
+            command: buildAndPush
+            repository: 'CustomerManagement'
+            dockerfile: 'CustomerManagementAPI/Dockerfile'
+            containerRegistry: 'nmpersonalregistry'
