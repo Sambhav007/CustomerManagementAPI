@@ -4,10 +4,10 @@
 # https://aka.ms/yaml
 
 trigger:
-- main
+- master
 
 pool:
-  vmImage: 'linux-x64'
+  vmImage: 'ubuntu-latest'
 
 stages:
   - stage: BuildAndPublish
