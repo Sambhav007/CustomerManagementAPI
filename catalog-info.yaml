@@ -18,6 +18,9 @@ metadata:
     backstage.io/techdocs-ref: value
     lighthouse.com/website-url: https://backstage.io
 spec:
-  type: library
+  #type: library
+  #owner: user:guest
+  #lifecycle: experimental
+  type: website
+  lifecycle: production
   owner: user:guest
-  lifecycle: experimental
